@@ -30,7 +30,7 @@ module thrustend(height=10, bearing_diameter=24)
   {
     hull()
     {
-      for (x=[-15])
+      for (x=[-25])
         for (y=[-15,15])
           translate([x,y,0])
             cylinder(r=5, h=height);
@@ -41,7 +41,7 @@ module thrustend(height=10, bearing_diameter=24)
     }
 
     // M5 cap head bolts - heads sunk
-    for (x=[-15,22.5])
+    for (x=[-20,20])
       for (y=[-10,10])
         translate([x,y,0])
         {
@@ -65,12 +65,12 @@ module axis()
 
   difference()
   {
-    translate([40,0,110]) rotate([0,90,0]) tslot2040(length=200, center=true);
+    translate([30,0,110]) rotate([0,90,0]) tslot2040(length=200, center=true);
     translate([-40,0,99]) cylinder(r=14/2, h=22);
   }
   rotate([0,0,180]) makerslide(200);
-  translate([40,0,-110]) rotate([0,90,0]) tslot2040(length=200, center=true);
-  translate([-40,0,21]) ballscrew(200-9-9+11+15+39);
+  translate([30,0,-110]) rotate([0,90,0]) tslot2040(length=200, center=true);
+  translate([-40,0,21]) ballscrew(200-9-9-2-2+11+15+39);
 }
 
 axis();
